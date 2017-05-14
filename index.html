@@ -1,0 +1,84 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>reveal.js</title>
+
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/league.css">
+
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+				<section>고랭지 같은 썰렁한 농담</section>
+				<section data-markdown>
+					<textarea data-template>
+						### 오늘 할 이야기
+						* 안녕하세요. ACT 입니다.
+						* Go를 하기 위해서 해야하는 설득들
+						* Stack 구성
+						* 팀의 변화에 관한 이야기
+						* 개발 관점에서
+						* 운영 관점에서
+						* Q & A
+					</textarea>
+				</section>
+				<section>
+					<section>
+						안녕하세요 ACT 입니다.
+					</section>
+					<section>
+						애자일 코어팀 어쩌구 저쩌구
+					</section>
+				</section>
+				<section>
+					<section data-markdown>
+						<textarea data-template>
+						#### Go를 구성하기 위해서 해야하는 설득들
+						* 나는 어떻게 납득될 것인가
+						* 타인은 어떻게 설득하지
+						* 우리는 어떻게 어떻게 갈까
+					</textarea>
+					<section  data-markdown>
+						<textarea data-template>
+							### 나는 어떻게 납득될 것인가.
+						</textarea>
+					</section>
+					</section>
+				</section>
+			</div>
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.js"></script>
+
+		<script>
+			// More info about config & dependencies:
+			// - https://github.com/hakimel/reveal.js#configuration
+			// - https://github.com/hakimel/reveal.js#dependencies
+			Reveal.initialize({
+				dependencies: [
+					{ src: 'plugin/markdown/marked.js' },
+					{ src: 'plugin/markdown/markdown.js' },
+					{ src: 'plugin/notes/notes.js', async: true },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
+				]
+			});
+			Reveal.configure({ slideNumber: true });
+		</script>
+	</body>
+</html>
