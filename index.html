@@ -4,7 +4,7 @@
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-		<title>reveal.js</title>
+		<title>Go를 프로젝트에 적용한다는 것은</title>
 
 		<link rel="stylesheet" href="css/reveal.css">
 		<link rel="stylesheet" href="css/theme/league.css">
@@ -24,50 +24,201 @@
 	<body>
 		<div class="reveal">
 			<div class="slides">
-				<section>Go를 프로젝트에 적용한다는 것은</section>
+				<section><h2>Go를 프로젝트에 적용한다는 것은</h2></section>
 				<section data-markdown>
 					<textarea data-template>
-						### 오늘 할 이야기
+						<h3> 오늘 할 이야기 </h3>
 						* 안녕하세요. ACT 입니다.
-						* 우리의 미션
+						* 오늘의 프로젝트
 						* Go를 하기 위해서 해야하는 설득들
 						* Stack 구성
-						* 팀의 변화에 관한 이야기
-						* 개발 관점에서
-						* 운영 관점에서
+						* DevOps
+						* Dev 관점에서 본 Java vs Go
+						* PM thing
 						* Q & A
 					</textarea>
 				</section>
 				<section>
 					<section>
-						안녕하세요 ACT 입니다.
+						<h3>안녕하세요 ACT 입니다.</h3>
+						<p/>
+						(Agile Core Team)
 					</section>
 					<section>
-						애자일 코어팀 어쩌구 저쩌구
+						<img src="./img/act01.jpg">
+					</section>
+					<section>
+						ACT 핵심 프랙티스
+						<img src="./img/act02.jpg">
+					</section>
+					<section>
+						ACT 핵심 프랙티스
+						<img src="./img/act03.jpg">
+					</section>
+					<section>
+						ACT 일하는 방식
+						<img src="./img/act04.jpg">
+					</section>
+					<section data-markdown>
+						<textarea data-template>
+						#### 대내외 기사 및 벤치 마킹사례
+						* ‘삼성SDS는 실리콘밸리 DNA 이식중 - 애자일문화 전파팀 구성 조직문화 대대적 개편 나서’ (서울경제신문, 2016-07-20, http://www.sedaily.com/NewsView/1KYXUMIPCH )
+						* ‘실리콘밸리 문화, 삼성속으로 들어오다 - 애자일 코어팀의 새로인 시도’
+							(미디어삼성, 2016-05-16, http://www.samsung.net/mediasamsung/detailView.do?seqId=59067
+						* 계열사 임원 및 실무자 17회 ACT 벤치마킹 방문
+							(전자 무선사업부, S/W센터, 디자인경영센터, DMC 연구소, 삼성전기, 삼성생명 등)
+						* 대외사 ACT 벤치마킹
+							(LG전자, 두산중공업, SK C&C, GSSHOP, 쿠팡 등)
+						</textarea>
 					</section>
 				</section>
 				<section>
 					<section>
-						As-Is 미션
+						<h3>오늘의 프로젝트</h3>
 					</section>
 					<section>
-						To-Be 미션
+						(AS-WAS)
+						<p/>
+						Spring3 + Angular2 + mariadb					
+					</section>
+					<section>
+						(AS-IS)
+						<p/>
+						Go + React + mariadb
 					</section>
 				</section>
 				<section>
 					<section data-markdown>
 						<textarea data-template>
-						#### Go를 구성하기 위해서 해야하는 설득들
-						* 나는 어떻게 납득될 것인가
-						* 타인은 어떻게 설득하지
-						* 우리는 어떻게 어떻게 갈까
-					</textarea>
-					<section  data-markdown>
-						<textarea data-template>
-							### 나는 어떻게 납득될 것인가.
+						<h3>Go를 구성하기 위해서 해야하는 설득들</h3>
+						* 내가 먼저 납득되기
+						* 남을 설득하기
+						* 팀원들과 함께 가기
 						</textarea>
 					</section>
+					<section>
+						<strong>1. 나는 어떻게 납득될 것인가.</strong>
 					</section>
+					<section>
+						Node.js, Go 기반 지도 API 발표.
+						<img src="./img/osgeo.jpg"/>
+					</section>
+					<section>
+						생각보다 어렵지 않았다
+						<p/>
+						성능은 더 좋았다
+					</section>
+					<section>
+						새로운 stack 을 쌓는게 하찮은 일인가
+						<img src="./img/study.jpg"/>
+					</section>
+					<section>
+						팀의 속도에 어울리는 좋은 인력들(프로필 사진)을 보고 확신
+					</section>
+					<section>
+						<strong>2. 남을 어떻게 설득할 것인가</strong>
+					</section>
+					<section>
+						성능, 성능, 성능 (출처 : 나무위키)<p/>
+						<img src="./img/nomore.jpg"/>
+					</section>
+					<section>
+						소스코드 재작성은 악이 아니다.<br/>
+						http://docs.likejazz.com/software-engineering-at-google/
+						<img src="./img/rewrite01.jpg"/>
+						<img src="./img/rewrite02.jpg"/>
+					</section>
+					<section>
+						마법의 단어
+					</section>
+					<section>
+						마이크로 서비스, SAAS, RESTful...<p/>
+						Legacy - 해치지 않아요.
+					</section>
+					<section>
+						<strong>3. 팀원들과 확신하기</strong>
+					</section>
+					<section data-markdown>
+						<textarea data-template>
+						#### 오픈소스 개발방법 적용
+						* merge request( pull request )
+							* 초반 소스 코드는 직접 merge
+							* 이제는 코드 베이스가 커져서 조금 버거움
+							* 팀원들이 머리를 던지며 희열을 느낀다면
+						* 코드 리뷰
+						* DevOps
+						#### 폴리글랏( Thanks to 나프다 )
+						* 무기가 하나 정도는 더 있어야지
+						</textarea>
+					</section>
+					<section>
+						한 사람 정도는 미리 해본 사람이 있는게 심정적으로는 도움이 되더라<p/>
+						성능의 문제는 팀원들을 설득하는 데에는 크게 작용하지 않더라 - 좋겠죠 뭐.
+					</section>
+					<section>
+						정말로 <img src="./img/run_go.png"/>
+					</section>
+				</section>
+				<section>
+					<section><h3>stack</h3></section>
+					<section>
+						<h4>web framework</h4>
+						gorilla vs revel
+					</section>
+					<section>
+						<h4>Test Suite</h4>
+						unit test & Mock Test - GoMock, MockGen
+					</section>
+					<section>
+						<h4>ORM</h4>
+						GORM
+					</section>
+				</section>
+				<section>
+					<section><h3>DevOps</h3></section>
+					<section>
+						Gitlab CI vs Jenkins
+					</section>
+				</section>
+				<section>
+					<section><h3>Dev 관점에서 본 Java vs Go</h3></section>
+				</section>
+				<section>
+					<section><h3>PM thing</h3></section>
+					<section  data-markdown>
+						<textarea data-template>
+						#### 눈에 보이지 않는 것들
+						* 모두가 고만 고만해서
+							* PM의 주도권
+							* 개발자들의 보이지 않는 경쟁
+							* 굉장히 좋은 에너지를 끝까지 가져갈 수 있음
+							* 지속적으로 모두가 공부하는 분위기가 주는 긴장감
+						* 새로운 것을 할 때의 기대감
+						* 생각보다 큰 허들이 없음
+							* 성숙하진 않으나 없는 것 빼고는 다 있는 개발 커뮤니티
+						</textarea>
+					</section>
+					<section>
+						눈에 보이는 것들
+					</section>
+					<section>
+						Velocity
+					</section>
+					<section>
+						Test Coverage
+					</section>
+					<section>
+						사용자 스토리가 상세해 짐.
+						- 모두가 이해 못하는 상황을 만들 수 없으니까.
+					</section>
+				</section>
+				<section>
+					<section><h3>마무리</h3></section>
+					<section>
+						팀이 결정할 것.
+						<img src="./img/asyouwish.jpg"/>
+					</section>
+					<section><h3>Q & A</h3></section>
 				</section>
 			</div>
 		</div>
