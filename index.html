@@ -180,8 +180,140 @@
 						Gitlab CI vs Jenkins
 					</section>
 				</section>
-				<section>
+				<section id="dev">
 					<section><h3>Dev 관점에서 본 Java vs Go</h3></section>
+					<section>
+						<h3>사실 우리의 첫 선택은..</h3>
+						React + SpringBoot
+					</section>
+					<section  data-markdown>
+						<textarea data-template>
+						### 당연히 Java 를 선택했던 이유
+						* 익숙 함
+							* 팀원 모두 메인 개발 언어
+							* 항상 그래왔었기 때문에..
+
+						* Ecosystem
+							* Spring Boot, Spring Cloud, Spring Data JPA..
+
+						* 우리를 제외한 모든 팀이 Java
+
+						* 사실 Java 밖에 안해봄.....
+						</textarea>
+					</section>
+					<section  data-markdown>
+						<textarea data-template>
+						### 그런데 왜 굳이 Go로 Go??
+						* keen이 하자고 해서
+
+						* 이름이 있어 보여서
+
+						* 딱히 안할 이유도 없어서
+
+						* java 말고 다른 것도 해보고 싶어서
+
+						* 다른 팀에서 서비스를 jar 파일로 제공한다고 해서
+						</textarea>
+					</section>
+
+					<section  data-markdown>
+						<textarea data-template>
+						### 새로운 언어로 개발한다는 의미
+						* 문법
+
+						* Coding Convention
+
+						* 개발 패턴 (OOP, FP, Design Pattern..)
+
+						* Framework
+
+						등등.. 익숙함을 버려야 함
+						</textarea>
+					</section>
+
+					<section><h2>Go 단순함</h2></section>
+
+					<section>
+						<h3>Java Keyword : 50</h3>
+						<img src="./img/java_keywords.png"/>
+						<p>https://docs.oracle.com/javase/tutorial/java/nutsandbolts/_keywords.html</p>
+					</section>
+					<section>
+						<h3>Go Keyword : 25</h3>
+						<img src="./img/go_keywords.png"/>
+						<p>https://golang.org/ref/spec#Keywords</p>
+					</section>
+					<section>
+						<img src="./img/coding_convention.jpg"/>
+					</section>
+
+					<section  data-markdown>
+						<textarea data-template>
+						### gofmt
+						automatically formats Go source code.
+						* easier to write
+						* easier to read
+						* easier to maintain
+						* uncontroversial
+
+						https://blog.golang.org/go-fmt-your-code
+						</textarea>
+					</section>
+
+					<section data-markdown>
+						<textarea data-template>
+						### once write, run anywhere
+						```bash
+						$ GOOS=windows GOARCH=amd64 go install
+						```
+						https://golang.org/doc/install/source#environment
+						</textarea>
+					</section>
+
+					<section data-markdown>
+						<textarea data-template>
+						### $GOPATH
+						- Avoid import '../../../../../../../../'
+
+						- $GOPATH/src 를 root로 보고 경로 지정
+
+						```go
+						import (
+							"github.com/gorilla/mux"            // 외부 라이브러리
+							"github.com/kihoonkim/gogo/utils"   // 내 패키지
+							"net/http"                          // 표준 라이브러리
+						)
+						```
+						</textarea>
+					</section>
+					<section>
+						dependency (maven repo vs. github)
+					</section>
+					<section>
+						Type.. dynamic dispatch
+					</section>
+					<section>
+						동시성 (thread vs goroutine)
+					</section>
+					<section>
+						test code
+					</section>
+					<section>
+						<h3>프로그래밍 언어 순위</h3>
+						<img src="./img/top_language.png" height="600"/>
+						https://www.tiobe.com/tiobe-index/
+					</section>
+					<section  data-markdown>
+						<textarea data-template>
+						### Go로 개발된 오픈소스들
+						* Docker
+						* Kubernetes
+						* etcd
+						* InfluxDB
+						....
+						</textarea>
+					</section>
+					<section><h3>Dev end..</h3></section>
 				</section>
 				<section>
 					<section><h3>PM thing</h3></section>
