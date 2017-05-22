@@ -77,12 +77,12 @@
 						<h3>오늘의 프로젝트</h3>
 					</section>
 					<section>
-						(AS-WAS)
+						(AS-IS)
 						<p/>
 						Spring3 + Angular2 + mariadb
 					</section>
 					<section>
-						(AS-IS)
+						(TO-BE)
 						<p/>
 						Go + React + mariadb
 					</section>
@@ -99,6 +99,18 @@
 					<section>
 						<strong>1. 나는 어떻게 납득될 것인가.</strong>
 					</section>
+					<section data-markdown>
+						<textarea data-template>
+						#### PM 으로써 걱정들
+						* 적당한 아키텍처인가
+						* 어떤 문제(Pain Point)를 해결할 것인가
+						* 이것은 그 솔루션인가
+						* 개발 속도
+						* 속도와 최적화
+						* 품질
+						* 팀 케미는 어떻게 될 것인가
+						</textarea>
+					</section>
 					<section>
 						Node.js, Go 기반 지도 API 발표.
 						<img src="./img/osgeo.jpg"/>
@@ -109,11 +121,13 @@
 						성능은 더 좋았다
 					</section>
 					<section>
-						새로운 stack 을 쌓는게 하찮은 일인가
-						<img src="./img/study.jpg"/>
+						고민만 했다간 30년 걸려도 못하겠더라.(출처 : the300)
+						<p/>
+						<img src="./img/yoo.jpg"/>
 					</section>
 					<section>
 						팀의 속도에 어울리는 좋은 인력들(프로필 사진)을 보고 확신
+
 					</section>
 					<section>
 						<strong>2. 남을 어떻게 설득할 것인가</strong>
@@ -136,11 +150,15 @@
 						Legacy - 해치지 않아요.
 					</section>
 					<section>
+						strangler pattern<p/>
+						<img src="./img/strangler.jpg"/>
+					</section>
+					<section>
 						<strong>3. 팀원들과 확신하기</strong>
 					</section>
 					<section data-markdown>
 						<textarea data-template>
-						#### 오픈소스 개발방법 적용
+						#### 나름 오픈소스 개발방법 적용
 						* merge request( pull request )
 							* 초반 소스 코드는 직접 merge
 							* 이제는 코드 베이스가 커져서 조금 버거움
@@ -150,6 +168,10 @@
 						#### 폴리글랏( Thanks to 나프다 )
 						* 무기가 하나 정도는 더 있어야지
 						</textarea>
+					</section>
+					<section>
+						Mob Programming<p/>
+
 					</section>
 					<section>
 						한 사람 정도는 미리 해본 사람이 있는게 심정적으로는 도움이 되더라<p/>
@@ -171,13 +193,34 @@
 					</section>
 					<section>
 						<h4>ORM</h4>
-						GORM
+						<img src="./img/gorm.png"/>
+					</section>
+					<section>
+						<h4>IDE - Gogland</h4>
+						<img src="./img/gogland.png"  style="filter: blur(1px);"/>
+					</section>
+					<section>
+						<h4>Glide - Package Manager</h4>
+						<img src="./img/glide.png"/>
 					</section>
 				</section>
 				<section>
 					<section><h3>DevOps</h3></section>
 					<section>
-						Gitlab CI vs Jenkins
+						At a glance
+						<p/>
+						<img src="./img/devops.png"/>
+					</section>
+					<section>
+						<pre><code>
+Service start
+nohup $(cd /home/ubuntu; ./golangZ) & echo $! > $PID_PATH_NAME
+#->빌드로 만들어진 파일을 실행시키고 종료를 위해 PID를 기록해둔다.
+
+ Service stop
+sudo kill -9 $PID;
+#-> PID를 가지고 프로세스를 kill시킨다.
+  				</code></pre>
 					</section>
 				</section>
 				<section>
@@ -203,7 +246,7 @@
 					</section>
 					<section>
 						Lead Time ( ACT avg = 2d )
-						<img src="./img/lead_timie.png"/>
+						<img src="./img/lead_time.png"/>
 					</section>
 					<section>
 						Velocity ( 등짝 말고 추세를 보자 )
@@ -214,12 +257,22 @@
 						<img src="./img/test_coverage.png"/>
 					</section>
 					<section>
+						Code Coverage
+						<img src="./img/code_coverage.png"/>
+					</section>
+					<section>
 						사용자 스토리가 상세해 짐.
 						- 모두가 이해 못하는 상황을 만들 수 없으니까.
+						<img src="./img/userstory.png" style="filter: blur(2px);"/>
 					</section>
 				</section>
 				<section>
 					<section><h3>마무리</h3></section>
+					<section>
+						대체재 vs 보완재
+						<p/>
+						<img src="./img/alchol.jpg"/>
+					</section>
 					<section>
 						팀이 결정할 것.
 						<img src="./img/asyouwish.jpg"/>
