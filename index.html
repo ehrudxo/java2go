@@ -233,20 +233,77 @@
 
 					<section><h2>Go 단순함</h2></section>
 
+					<section data-markdown>
+						<textarea data-template>
+							### 초 간단 GO 문법 - 1
+							```go
+							// 변수
+							var a int = 10
+
+							// 상수
+							const C int = 10
+
+							// 배열
+							var a1 = [3]int{1, 2, 3}
+							```
+						</textarea>
+					</section>
+					<section data-markdown>
+						<textarea data-template>
+							### 초 간단 GO 문법 - 2
+							```go
+							// 조건문
+							if a == C {
+							} else {
+							}
+							switch cond {
+							case 1:
+							default:
+							}
+
+							// 반복문
+							for i := 1; i <= 100; i++ {
+							}
+							for _, name := range array {
+							}
+							```
+						</textarea>
+					</section>
+					<section data-markdown>
+						<textarea data-template>
+							### 초 간단 GO 문법 - 3
+							```go
+							// 함수
+							func say(msg string) (int, int) {
+									...
+									return a, b
+							}
+							// 구조체
+							type shape struct {
+									Width  int
+									height int
+							}
+							c := shape{100, 200}
+							// 메서드
+							func (s shape) area() int {
+								return s.Width * s.height
+							}
+							```
+						</textarea>
+					</section>
+
 					<section>
 						<h3>Java Keyword : 50</h3>
 						<img src="./img/java_keywords.png"/>
-						<p>https://docs.oracle.com/javase/tutorial/java/nutsandbolts/_keywords.html</p>
 					</section>
 					<section>
 						<h3>Go Keyword : 25</h3>
 						<img src="./img/go_keywords.png"/>
-						<p>https://golang.org/ref/spec#Keywords</p>
 					</section>
+
 					<section>
 						<img src="./img/coding_convention.jpg"/>
 					</section>
-
 					<section  data-markdown>
 						<textarea data-template>
 						### gofmt
@@ -257,6 +314,32 @@
 						* uncontroversial
 
 						https://blog.golang.org/go-fmt-your-code
+						</textarea>
+					</section>
+					<section  data-markdown>
+						<textarea data-template>
+							#### before
+							```go
+							func main() {
+								sum := 0
+								for i:=0; i<10; i++ { sum += i }
+								fmt.Println(sum)
+							}
+							```
+							#### format
+							```bash
+							$ go fmt main.go
+							```
+							#### after
+							```go
+							func main() {
+								sum := 0
+								for i := 0; i < 10; i++ {
+									sum += i
+								}
+								fmt.Println(sum)
+							}
+							```
 						</textarea>
 					</section>
 
@@ -286,17 +369,110 @@
 						```
 						</textarea>
 					</section>
-					<section>
-						dependency (maven repo vs. github)
+					<section data-markdown>
+						<textarea data-template>
+							### JAVA Type Inheritance
+							```java
+							public interface Duck {
+							  void Quack();
+							}
+							public class DonaldDuck implements Duck {
+							  @override
+							  public void Quack() {
+							    System.out.Println("I'm Donald Duck");
+							  }
+							}
+
+							public static void main(String[] agrs) {
+							  Duck duck = new DonaldDuck();
+							}
+							```
+						</textarea>
+					</section>
+					<section data-markdown>
+						<textarea data-template>
+							### go type inheritance
+							```go
+							type Duck interface {
+								Quack()
+							}
+
+							type DonaldDuck struct {}
+							func (d DonaldDuck) Quack() {
+								fmt.Println("Hello I'm Docal Duck. Quack Quack")
+							}
+							func (d DonaldDuck) Walk()  {
+								fmt.Println("I can walk")
+							}
+
+							func main() {
+								var donald Duck = new(DonaldDuck)
+								donald.Quack()
+							}
+							```
+						</textarea>
 					</section>
 					<section>
-						Type.. dynamic dispatch
+						<h3>Duck Typing</h3>
+						<p>
+						만약 어떤 새가 오리처럼 걷고,	<br>
+						헤엄치고, 꽥꽥거리는 소리를 낸다면<br>
+						나는 그 새를 오리라고 부를 것이다.<br>
+						</p>
+						<img src="../img/duck_typing.jpg" height="300"/>
 					</section>
-					<section>
-						동시성 (thread vs goroutine)
+					<section data-markdown>
+						<textarea data-template>
+							### 동시성 thread vs goroutine
+							```java
+							// JAVA
+							new Thread(() -> System.out.println("Hello World!")).run();
+							```
+							```go
+							// GO
+							go fmt.Println("Hello World!")
+							```
+						</textarea>
 					</section>
-					<section>
-						test code
+					<section data-markdown>
+						<textarea data-template>
+							### Test
+							```go
+							package calc
+							func Sum(a int, b int) int {
+								return a + b
+							}
+							```
+							```go
+							package calc
+
+							import "testing"			// test 표준 라이브러리
+							func TestSum(t *testing.T)  {
+								result := Sum(1, 2)
+								if result != 3 {
+									t.Errorf("expected:%s actual:%s", 3, result)
+								}
+							}
+							```
+						</textarea>
+					</section>
+					<section data-markdown>
+						<textarea data-template>
+							### Test 실행 및 커버리지
+							```bash
+							$  go test -v ./calc
+							=== RUN   TestSum
+							--- PASS: TestSum (0.00s)
+							PASS
+							ok      github.com/kihoonkim/gogo/calc  0.033s
+
+							$  go test -v -cover ./calc
+							=== RUN   TestSum
+							--- PASS: TestSum (0.00s)
+							PASS
+							coverage: 100.0% of statements
+							```
+						</textarea>
 					</section>
 					<section>
 						<h3>프로그래밍 언어 순위</h3>
@@ -310,6 +486,7 @@
 						* Kubernetes
 						* etcd
 						* InfluxDB
+						* Beats (Elasticsearch)
 						....
 						</textarea>
 					</section>
