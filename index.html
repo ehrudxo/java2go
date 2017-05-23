@@ -59,6 +59,22 @@
 						ACT 일하는 방식
 						<img src="./img/act04.jpg">
 					</section>
+					<section>
+						역할자 설명
+						<img src="./img/role.png">
+					</section>
+					<section>
+						DEV
+						<img src="./img/dev.png">
+					</section>
+					<section>
+						Designer
+						<img src="./img/cx.png">
+					</section>
+					<section>
+						PM
+						<img src="./img/pm.png">
+					</section>
 					<section data-markdown>
 						<textarea data-template>
 						#### 대내외 기사 및 벤치 마킹사례
@@ -171,7 +187,9 @@
 					</section>
 					<section>
 						Mob Programming<p/>
-
+					  <video>
+					    <source data-src="./mov/mob.mp4" type="video/mp4" />
+					  </video>
 					</section>
 					<section>
 						한 사람 정도는 미리 해본 사람이 있는게 심정적으로는 도움이 되더라<p/>
@@ -209,7 +227,17 @@
 					<section>
 						At a glance
 						<p/>
-						<img src="./img/devops.png"/>
+						<img src="./img/devops.png" height="500px"/>
+					</section>
+					<section>
+						원격 빌드 설정
+						<p/>
+						<img src="./img/build_setting1.png" />
+					</section>
+					<section>
+						빌드 설정
+						<p/>
+						<img src="./img/build_setting2.png" height="500px"/>
 					</section>
 					<section>
 						<pre><code>
@@ -462,7 +490,7 @@ sudo kill -9 $PID;
 						헤엄치고, 꽥꽥거리는 소리를 낸다면<br>
 						나는 그 새를 오리라고 부를 것이다.<br>
 						</p>
-						<img src="../img/duck_typing.jpg" height="300"/>
+						<img src="./img/duck_typing.jpg" height="300"/>
 					</section>
 					<section data-markdown>
 						<textarea data-template>
@@ -537,6 +565,19 @@ sudo kill -9 $PID;
 				</section>
 				<section>
 					<section><h3>PM thing</h3></section>
+					<section data-markdown>
+						<textarea data-template>
+						#### PM 으로써 걱정들
+						* 적당한 아키텍처인가
+						* 어떤 문제(Pain Point)를 해결할 것인가
+						* 이것은 그 솔루션인가
+						----------------
+						* 개발 속도
+						* 속도와 최적화
+						* 품질
+						* 팀 케미는 어떻게 될 것인가
+						</textarea>
+					</section>
 					<section  data-markdown>
 						<textarea data-template>
 						#### 눈에 보이지 않는 것들
@@ -606,7 +647,7 @@ sudo kill -9 $PID;
 					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
 				]
 			});
-			Reveal.configure({ slideNumber: true });
+			Reveal.configure({ slideNumber: true ,autoPlayMedia:true});
 		</script>
 	</body>
 </html>
