@@ -251,6 +251,7 @@ sudo kill -9 $PID;
   				</code></pre>
 					</section>
 				</section>
+				<!--dev start-->
 				<section id="dev">
 					<section><h3>Dev 관점에서 본 Java vs Go</h3></section>
 					<section>
@@ -362,7 +363,25 @@ sudo kill -9 $PID;
 							```
 						</textarea>
 					</section>
-
+					<section data-markdown>
+						<textarea data-template>
+							### 접근제한
+							```java
+							// JAVA
+							class Shape {
+							  private int width;
+							  public  int height;
+							}
+							```
+							```go
+							// GO
+							type Shape struct {
+							  Width  int 	// public
+							  height int 	// private
+							}
+							```
+						</textarea>
+					</section>
 					<section>
 						<h3>Java Keyword : 50</h3>
 						<img src="./img/java_keywords.png"/>
@@ -418,7 +437,7 @@ sudo kill -9 $PID;
 						<textarea data-template>
 						### once write, run anywhere
 						```bash
-						$ GOOS=windows GOARCH=amd64 go install
+						$ GOOS=windows GOARCH=amd64 go build
 						```
 						https://golang.org/doc/install/source#environment
 						</textarea>
@@ -545,6 +564,96 @@ sudo kill -9 $PID;
 							```
 						</textarea>
 					</section>
+					<section id="source-code">
+						<h3>간단한 Rest API 개발</h3>
+					</section>
+					<section>
+						<div data-markdown style="float: left; width: 100%; height: 35%; font-size: 25px">
+							#### Java Rest API
+							```java
+							@RestController
+							public class HelloController {
+							  @Autowired
+							  private HelloService service;
+
+							  @GetMapping(value = "/hello")
+							  public String sayHello() {
+							     return "Hello" + service.getName();
+							  }
+
+							  @PostMapping(value = "/hello/{name}")
+							  public Hello hello(@PathVariable(value = "name") String name) {
+							    return service.saveHello(name);
+							  }
+							}
+							```
+						</div>
+						<div data-markdown style="float: right; width: 100%; height: 65%; font-size: 25px;">
+							#### Go Rest API
+							```go
+							import (
+								"github.com/gorilla/mux"
+								"encoding/json"
+								"net/http"
+							)
+							func InitRouting(r *mux.Router) {
+								r.HandleFunc("/entities", GetHandler).Methods("GET")
+							}
+							type HelloHandler struct {
+								service Service
+							}
+							func (h *HelloHandler) GetHandler(w http.ResponseWriter, r *http.Request) {
+								name := h.service.GetName()
+								w.Header().Set("Content-Type", "application/json")
+								j, _ := json.Marshal("Hello " + name)
+								w.Write(j)
+							}
+							```
+						</div>
+					</section>
+					<section>
+						<div data-markdown style="float: left; width: 100%; height: 35%; font-size: 25px">
+							#### Java Rest API Test
+
+							```java
+							@RunWith(SpringRunner.class)
+							@WebMvcTest(HelloController.class)
+							public class HelloRestControllerTest {
+
+							  @Autowired MockMvc mvc;
+							  @MockBean HelloService serviceMock;
+
+							  @Test
+							  public void whenCallHelloApi_thenReturnHelloMessage() throws Exception {
+							    given(serviceMock.getName()).willReturn("Kihoon");
+
+								mvc.perform(get("/hello"))
+									.andExpect(status().isOk())
+									.andExpect(content().string("Hello Kihoon"));
+							  }
+							}
+							```
+						</div>
+						<div data-markdown style="float: right; width: 100%; height: 65%; font-size: 25px;">
+							#### Go Rest API Test
+
+							```go
+							func TestHelloHandler_GetHandler(t *testing.T) {
+								ctrl := gomock.NewController(t)
+								mockService := NewMockService(ctrl)
+								mockService.EXPECT().GetName().Return("Kihoon")
+
+								handler := HelloHandler{mockService}
+
+								req, _ := http.NewRequest("GET", "/hello", nil)
+
+								recorder := executeRouter(handler, req)
+
+								assert.Equal(t, "Hello Kihoon", recorder.Body.String())
+							}
+							```
+						</div>
+					</section>
 					<section>
 						<h3>프로그래밍 언어 순위</h3>
 						<img src="./img/top_language.png" height="600"/>
@@ -563,6 +672,7 @@ sudo kill -9 $PID;
 					</section>
 					<section><h3>Dev end..</h3></section>
 				</section>
+				<!--dev end-->
 				<section>
 					<section><h3>PM thing</h3></section>
 					<section data-markdown>
